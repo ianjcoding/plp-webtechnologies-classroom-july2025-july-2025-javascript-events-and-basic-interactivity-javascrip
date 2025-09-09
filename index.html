@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anime Image Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <!-- ===== FORM SECTION ===== -->
+    <section class="form-section">
+      <h1>Anime Image Generator</h1>
+      <form id="animeForm">
+        <div class="form-group">
+          <label for="caption">Caption</label>
+          <input id="caption" name="caption" type="text" placeholder="Enter caption (max 80 chars)">
+          <small id="captionError" class="error"></small>
+        </div>
+
+        <div class="field sliders">
+          <h3>Filters</h3>
+          <div class="slider-row">
+            <label for="brightness">Brightness:</label>
+            <input type="range" id="brightness" min="0.5" max="1.5" step="0.05" value="1">
+            <span id="brightnessVal">1.00</span>
+          </div>
+          <div class="slider-row">
+            <label for="contrast">Contrast:</label>
+            <input type="range" id="contrast" min="0.5" max="1.5" step="0.05" value="1">
+            <span id="contrastVal">1.00</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="generateBtn" type="button">Generate Image</button>
+          <button id="randomizeBtn" type="button">Random Caption</button>
+          <button id="clearGalleryBtn" type="button" class="danger">Clear Gallery</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ===== PREVIEW SECTION ===== -->
+    <section class="preview">
+      <h2>Preview</h2>
+      <canvas id="canvas" width="500" height="500" aria-label="Generated image preview"></canvas>
+      <div class="preview-controls">
+        <button id="downloadBtn" type="button">Download</button>
+        <button id="saveBtn" type="button">Save to Gallery</button>
+      </div>
+      <div id="status" class="status"></div>
+    </section>
+
+    <!-- ===== GALLERY SECTION ===== -->
+    <section class="gallery">
+      <h2>Saved Gallery</h2>
+      <div id="galleryGrid" class="grid"></div>
+    </section>
+
+    <footer>
+      <small>Anime demo app. Images are random samples.</small>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
